@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body class="text-bg-dark">
   <header>
@@ -16,7 +16,7 @@
     </nav>
   </header>
 
-  <div class="container">
+  <div class="container my-3">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card mt-2">
@@ -34,7 +34,7 @@
             <img src="./img/2-comandos-subir-repo.png" class="w-100 card-img-top-" alt="comandos subir repositorio">
           </div>
           <div class="card-body">
-            <p class="card-text"><b>2)</b> Vamos a ver los comandos que vamos a tener que ejecutar en la consola. Se ejecuta cada linea por separado. La primera linea es simplemente un mensaje y no es necesario ejecutar. Prestar atencion a que la 3ra linea, en lugar de usar <i>git add README.md</i> tenemos que poner <i>git add .</i> para que tome todos los archivos de nuestro proyecto </p>
+            <p class="card-text"><b>2)</b> Vamos a ver los comandos que vamos a tener que ejecutar en la consola. </p>
           </div>
         </div>
       </div>
@@ -48,6 +48,70 @@
           </div>
         </div>
       </div>
+      <div class="col-md-8">
+        <div class="card mt-2">
+          <div class="img mx-auto">
+            <img src="./img/4-ejecutando-comando.png" class="w-100 card-img-top-" alt="ejecutando comandos">
+          </div>
+          <div class="card-body">
+            <p class="card-text"><b>4)</b> Se ejecuta cada linea del punto <b>2</b> por separado. La primera linea es simplemente un mensaje y no es necesario ejecutar. Prestar atención a que la 3ra linea, en lugar de usar git add README.md tenemos que poner git add . para que tome todos los archivos de nuestro proyecto</p>
+            <p class="card-text">Lo que se muestra debajo del <i>git commit</i> va a depender de la cantidad de archivos de nuestro proyecto</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="col-md-8">
+        <div class="card mt-2">
+          <div class="img mx-auto">
+            <img src="./img/5-estructura-necesaria.png" class="w-100 card-img-top-" alt="estructura de carpetas">
+          </div>
+          <div class="card-body">
+            <p class="card-text"><b>5)</b> Volviendo a abrir nuestro repositorio en GitHub (o actualizando si quedo ahi) se van a ver los archivos de nuestro proyecto. Es fundamental que el <i>index.html</i> este en la raíz (como se ven en la imagen para desplegar correctamente en GitHub Pages)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card mt-2">
+          <div class="img mx-auto">
+            <img src="./img/6-desplegar-github-pages.png" class="w-100 card-img-top-" alt="desplegar github pages">
+          </div>
+          <div class="card-body">
+            <p class="card-text"><b>6)</b> Para desplegar en GitHub Pages hay que ir a <i>Settings</i>, <i>Pages</i> y en la derecha elegir <i>main</i> y <i>/ (root)</i>. Guardar y esperar un par de minutos para que se despliegue.</p>
+            <p>Después de un par de minutos actualizar la página y en la parte superior se va a ver el link con el botón para ir a la web que se subió.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card mt-2">
+          <div class="img mx-auto" style="max-width: 300px;">
+            <img src="./img/info-extra-1.png" class="w-100 card-img-top-" alt="info-extra-1">
+          </div>
+          <div class="card-body">
+            <p class="card-text"><b>INFO EXTRA 1:</b> A medida que se modifican archivos se van a mostrar en color verde los nuevos y en amarillo/naranja los modificados desde el ultimo commit</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card mt-2">
+          <div class="img mx-auto">
+            <img src="./img/info-extra-2.png" class="w-100 card-img-top-" alt="info-extra-1">
+          </div>
+          <div class="card-body">
+            <p class="card-text mb-1"><b>INFO EXTRA 2:</b> Para que funcionen correctamente los recursos (css, js e imagenes) es necesario usar <i>./</i> al comienzo de la ruta. Por ejemplo: </p>
+            <div>
+              <div class="ms-3">styles.css en la misma carpeta que el index.html => src="./styles.css"</div>
+              <div class="ms-3">styles.css dentro de una carpeta llamada css => src="./css/styles.css"</div>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 
