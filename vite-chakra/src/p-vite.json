@@ -6,21 +6,23 @@
   },
   {
     "id":"Paso 6",
-    "detalle": "",
+    "detalle": "Modificar el package.json: <br>- Agregar <i>\"predeploy\":\"npm run build\"</i> como se ve en la linea 10<br>- Agregar <i>\"deploy\":\"gh-pages -d dist\"</i> como se ve en la linea 11",
     "img": "./img/6-modificando-package.json-vite.png"
   },
   {
     "id":"Paso 7",
-    "detalle": "",
+    "detalle": "Modificar el archivo config.vite.js agregando la propiedad <i>base</i> al objeto que se le pasa a <i>defineConfig</i>. <br>- Agregar la linea <i>base: '/nombre-repositorio/'</i>. El nombre de su repositorio tiene que ir siempre entre / / como se ve en el ejemplo",
     "img": "./img/7-modificando-config.vite.js.png"
   },
   {
-    "id":"Paso 5",
-    "detalle": "Instalar gh-pages con el comando <i>npm install gh-pages --save-dev</i>",
-    "img": "./img/5-instalacion-gh-pages.png"
+    "id":"Paso 8",
+    "detalle": [
+      "Ejecutar el comando <i>npm run deploy</i>. No es necesario ejecutar <i>npm run build</i>.<br>Cuando la consola muestre <b>Published</b> solo tenemos que esperar un par de minutos para que se muestre la web desplegada en Github Pages"
+    ],
+    "img": "./img/8-desplegar-vite.png"
   },
   {
-    "id":"INFO EXTRA 1",
+    "id":"INFO EXTRA",
     "detalle": "Si bien para actualizar el deploy basta con correr nuevamente <i>npm run deploy</i> sin necesidad de hacer un commit previo, recomiendo hacer el commit para tener todo actualizado. Si actualizan el deploy y después de unos minutos no se ven los cambios, actualizar la pagina con ctrl+F5"
   }
 ]
