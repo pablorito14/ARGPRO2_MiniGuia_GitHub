@@ -1,0 +1,28 @@
+[
+  {
+    "id":"Paso 1",
+    "detalle": "Entrar en GitHub y crear un repositorio nuevo. Poner un nombre (y descripción si se quiere), dejar en publico (para poder desplegar en Pages) y crear.",
+    "img": "./img/1-creando-repo.png"
+  },
+  {
+    "id":"Paso 2",
+    "detalle": "Vamos a ver los comandos que vamos a tener que ejecutar en la consola.",
+    "img": "./img/2-comandos-subir-repo.png"
+  },
+  {
+    "id":"Paso 3",
+    "detalle": "En vs code dar click derecho sobre la carpeta de nuestro proyecto y elegir <i>Abrir en terminal integrado</i> y esperar a que en la consola salga la carpeta que queremos subir. Prestar atención que este dentro de esa carpeta, sino va a haber problemas.",
+    "img": "./img/3-abriendo-consola-vscode.png"
+  },
+  {
+    "id":"Paso 4",
+    "detalle": "Se ejecuta cada linea del punto <b>2</b> por separado. La primera linea es simplemente un mensaje y no es necesario ejecutar. Prestar atención a que la 3ra linea, en lugar de usar git add README.md tenemos que poner git add . para que tome todos los archivos de nuestro proyecto.<br> Lo que se muestra debajo del <i>git commit</i> va a depender de la cantidad de archivos de nuestro proyecto",
+    "img": "./img/4-ejecutando-comando.png"
+  },
+  {
+    "id": "INFO EXTRA 1",
+    "detalle": "A medida que se modifican archivos se van a mostrar en color verde los nuevos y en amarillo/naranja los modificados desde el ultimo commit",
+    "img":"./img/info-basica-extra.png"
+  }
+
+]

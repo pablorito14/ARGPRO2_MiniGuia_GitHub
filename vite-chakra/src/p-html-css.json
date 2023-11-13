@@ -1,0 +1,17 @@
+[
+  {
+    "id":"Paso 5",
+    "detalle": "Volviendo a abrir nuestro repositorio en GitHub (o actualizando si quedo ahi) se van a ver los archivos de nuestro proyecto. Es fundamental que el <i>index.html</i> este en la raíz (como se ven en la imagen para desplegar correctamente en GitHub Pages)",
+    "img": "./img/5-estructura-necesaria.png"
+  },
+  {
+    "id":"Paso 6",
+    "detalle": "Para desplegar en GitHub Pages hay que ir a <i>Settings, Pages</i> y en la derecha elegir <i>main</i> y <i>/ (root)</i>. Guardar y esperar un par de minutos para que se despliegue.<br />Después de un par de minutos actualizar la página y en la parte superior se va a ver el link con el botón para ir a la web que se subió.",
+    "img": "./img/6-desplegar-github-pages.png"
+  },
+  {
+    "id":"INFO EXTRA",
+    "detalle": "Para que funcionen correctamente los recursos (css, js e imágenes) es necesario usar <i>./</i> al comienzo de la ruta. Por ejemplo: <br /><p>styles.css en la misma carpeta que el index.html => src=\"./styles.css\"</p><p>styles.css dentro de una carpeta llamada css => src=\"./css/styles.css\"</p>",
+    "img": "./img/info-html-css-extra.png"
+  }
+]

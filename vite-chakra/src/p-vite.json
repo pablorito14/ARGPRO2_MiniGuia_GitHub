@@ -1,0 +1,26 @@
+[
+  {
+    "id":"Paso 5",
+    "detalle": "Instalar gh-pages con el comando <i>npm install gh-pages --save-dev</i>",
+    "img": "./img/5-instalacion-gh-pages.png"
+  },
+  {
+    "id":"Paso 6",
+    "detalle": "",
+    "img": "./img/6-modificando-package.json-vite.png"
+  },
+  {
+    "id":"Paso 7",
+    "detalle": "",
+    "img": "./img/7-modificando-config.vite.js.png"
+  },
+  {
+    "id":"Paso 5",
+    "detalle": "Instalar gh-pages con el comando <i>npm install gh-pages --save-dev</i>",
+    "img": "./img/5-instalacion-gh-pages.png"
+  },
+  {
+    "id":"INFO EXTRA 1",
+    "detalle": "Si bien para actualizar el deploy basta con correr nuevamente <i>npm run deploy</i> sin necesidad de hacer un commit previo, recomiendo hacer el commit para tener todo actualizado. Si actualizan el deploy y después de unos minutos no se ven los cambios, actualizar la pagina con ctrl+F5"
+  }
+]
