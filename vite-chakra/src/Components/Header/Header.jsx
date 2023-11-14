@@ -20,7 +20,7 @@ const Header = () => {
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
 
-          <Link href='https://github.com/pablorito14/ARGPRO2_MiniGuia_GitHub/tree/main-vite/vite-chakra' isExternal>
+          <Link href='https://github.com/pablorito14/ARGPRO2_MiniGuia_GitHub' isExternal>
             <FaGithub />
           </Link>
         </motion.div>
