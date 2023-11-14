@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Main.css';
-import { Text,Box, Button, Container, shouldForwardProp, chakra } from '@chakra-ui/react';
+import { Text,Box, Button, Container, shouldForwardProp, chakra, Heading, Divider } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 import pasosBasicos from '../../p-basicos.json';
@@ -77,9 +77,9 @@ const Main = () => {
   // const tabs = ['Pasos básicos','HTML + CSS', 'React','Vite']
   const tabs = [
     {handler: handleShowBasicos ,label: 'Pasos básicos'},
-    {handler: handleShowHtmlCss ,label: 'HTML + CSS'}, 
-    {handler: handleShowReact,label: 'React'},
-    {handler: handleShowVite,label: 'Vite'}
+    {handler: handleShowHtmlCss ,label: 'Deploy HTML+CSS+JS'}, 
+    {handler: handleShowReact,label: 'Deploy React'},
+    {handler: handleShowVite,label: 'Deploy Vite'}
   ];
 
   return(
@@ -89,15 +89,31 @@ const Main = () => {
         <Box display='grid' gridTemplateColumns={{base:'repeat(2,1fr)',md:'repeat(4,1fr)'}} gap={2} justifyContent='space-between'>
           {tabs.map((tab,i) => <MotionButton key={i} tab={tab.label} delay={0.3+(i/5)} handler={tab.handler}/>)}
         </Box>
-
         <motion.div 
             animate={{opacity:1}} 
             transition={{duration: 0.1,delay: 0.3+(tabs.length/5)}} 
             initial={{opacity:0}}>
-          {showBasicos && <MotionPasos arrPasos={pasosBasicos} /> }
-          {showHtmlCss && <MotionPasos arrPasos={pasosHtmlCss} /> }
-          {showReact && <MotionPasos arrPasos={pasosReact} /> }
-          {showVite && <MotionPasos arrPasos={pasosVite} /> }
+          <Divider h='10px' />
+          {showBasicos && 
+          <>
+            <Heading color='gray.300' textAlign='center'>{tabs[0].label}</Heading>
+            <MotionPasos arrPasos={pasosBasicos} /> 
+          </>}
+          {showHtmlCss && 
+          <>
+            <Heading color='gray.300' textAlign='center'>{tabs[1].label}</Heading>
+            <MotionPasos arrPasos={pasosHtmlCss} /> 
+          </>}
+          {showReact && 
+          <>
+            <Heading color='gray.300' textAlign='center'>{tabs[2].label}</Heading>
+            <MotionPasos arrPasos={pasosReact} /> 
+          </>}
+          {showVite && 
+          <>
+            <Heading color='gray.300' textAlign='center'>{tabs[3].label}</Heading>
+            <MotionPasos arrPasos={pasosVite} /> 
+          </>}
         </motion.div>
 
       </Container>

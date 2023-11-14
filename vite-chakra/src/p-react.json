@@ -2,21 +2,21 @@
   {
     "id":"Paso 5",
     "detalle": "Instalar gh-pages con el comando <i>npm install gh-pages --save-dev</i>",
-    "img": "./img/5-instalacion-gh-pages.png"
+    "img": "https://i.imgur.com/p8rWHCw.png"
   },
   {
     "id":"Paso 6",
     "detalle": [
       "Modificar el package.json: <br>- Agregar <i>\"homepage\":\"/url-proyecto-desplegado/\"</i> como se ve en la linea 5 reemplazando <i>url-proyecto-desplegado</i>. Este link se genera de la siguiente forma: <i>https://{{nombre-usuario}}.github.io/{{nombreu-repo}}</i> (sin {{ }} por supuesto)<br>- Agregar <i>\"predeploy\":\"npm run build\"</i> como se ve en la linea 17<br>- Agregar <i>\"deploy\":\"gh-pages -d build\"</i> como se ve en la linea 18"
     ],
-    "img": "./img/6-modificacion-package.json.png"
+    "img": "https://i.imgur.com/MmjrYZc.png"
   },
   {
     "id":"Paso 7",
     "detalle": [
       "Ejecutar el comando <i>npm run deploy</i>. No es necesario ejecutar <i>npm run build</i>.<br>Cuando la consola muestre <b>Published</b> solo tenemos que esperar un par de minutos para que se muestre la web desplegada en Github Pages"
     ],
-    "img": "./img/7-desplegar-react.png"
+    "img": "https://i.imgur.com/4f3dt00.png"
   },
   {
     "id":"INFO EXTRA 1",
