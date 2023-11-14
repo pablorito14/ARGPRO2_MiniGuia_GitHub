@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
-import { Text,Box, Container, shouldForwardProp, chakra } from '@chakra-ui/react';
+import { Text,Box, Button, Container, shouldForwardProp, chakra } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 import pasosBasicos from '../../p-basicos.json';
@@ -11,50 +11,95 @@ import { Paso } from '../Paso/Paso';
 
 import {isValidMotionProp, motion} from 'framer-motion';
 
-const MotionTab = ({tab,delay}) => {
+const MotionButton = ({tab,delay,handler}) => {
   
   return(
-    <Motion w='full' animate={{opacity:1}} transition={{duration: 1,delay: delay}} opacity={0}>
-      <Tab w='full' bg='white' _selected={{ color: 'white', bg: 'blue.600' }}>{tab}</Tab>
-    </Motion>
+    <Box w='full'>
+      <motion.div 
+          animate={{opacity:1}} 
+          transition={{duration: 0.1,delay: delay}} 
+          initial={{opacity:0}}>
+        <motion.div 
+          whileHover={{ scale: 0.9 }}
+          whileTap={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button w='100%' onClick={handler}>{ tab }</Button>
+        </motion.div>  
+      </motion.div>
+    </Box>
   )
 }
-
-const Motion = chakra(motion.div, {
-  shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop)
-})
-
+const MotionPasos = ({arrPasos}) => {
+  return (
+    <motion.div
+      animate={{opacity:1}} 
+      transition={{duration:1}} 
+      initial={{ opacity:0 }}
+    >
+      {arrPasos.map(paso => <Paso key={paso.id} paso={paso}/>)}
+    </motion.div>
+  )
+}
 const Main = () => {
   
-  const tabs = ['Pasos básicos','HTML + CSS', 'React','Vite']
+  const [showBasicos,setShowBasicos] = useState(true);
+  const [showHtmlCss,setShowHtmlCss] = useState(false);
+  const [showReact,setShowReact] = useState(false);
+  const [showVite,setShowVite] = useState(false);
+
+  const handleShowBasicos = () => {
+    setShowBasicos(true);
+    setShowHtmlCss(false);
+    setShowReact(false);
+    setShowVite(false);
+  }
+  
+  const handleShowHtmlCss = () => {
+    setShowBasicos(false);
+    setShowHtmlCss(true);
+    setShowReact(false);
+    setShowVite(false);
+  }
+  const handleShowReact = () => {
+    setShowBasicos(false);
+    setShowHtmlCss(false);
+    setShowReact(true);
+    setShowVite(false);
+  }
+  const handleShowVite = () => {
+    setShowBasicos(false);
+    setShowHtmlCss(false);
+    setShowReact(false);
+    setShowVite(true);
+  }
+
+  // const tabs = ['Pasos básicos','HTML + CSS', 'React','Vite']
+  const tabs = [
+    {handler: handleShowBasicos ,label: 'Pasos básicos'},
+    {handler: handleShowHtmlCss ,label: 'HTML + CSS'}, 
+    {handler: handleShowReact,label: 'React'},
+    {handler: handleShowVite,label: 'Vite'}
+  ];
 
   return(
     <Box bg='gray.600'>
       <Container maxW='4xl' py='1rem' >
-      <Tabs isFitted colorScheme='blue' position="relative" variant='soft-rounded'>
-        <TabList>
-          {tabs.map((tab,i) => <MotionTab key={i} tab={tab} delay={0.3+(i/5)} />)}
-        </TabList>
-        <Motion animate={{opacity:1}} transition={{duration: 1,delay: 0.3+(tabs.length/5)}} opacity={0}>
-          <TabPanels>
-            <TabPanel p='0'>
-            {pasosBasicos.map(paso => <Paso key={paso.id} paso={paso}/>) }
-              </TabPanel>
-              <TabPanel p='0'>
-              {pasosHtmlCss.map(paso => <Paso key={paso.id} paso={paso}/>) }
-              </TabPanel>
-              <TabPanel p='0'>
-              {pasosReact.map(paso => <Paso key={paso.id} paso={paso}/>) }
-              </TabPanel>
-              <TabPanel p='0'>
-              {pasosVite.map(paso => <Paso key={paso.id} paso={paso}/>) }
-              </TabPanel>
-            </TabPanels>
-          </Motion>
-      </Tabs>
 
+        <Box display='grid' gridTemplateColumns={{base:'repeat(2,1fr)',md:'repeat(4,1fr)'}} gap={2} justifyContent='space-between'>
+          {tabs.map((tab,i) => <MotionButton key={i} tab={tab.label} delay={0.3+(i/5)} handler={tab.handler}/>)}
+        </Box>
 
-        
+        <motion.div 
+            animate={{opacity:1}} 
+            transition={{duration: 0.1,delay: 0.3+(tabs.length/5)}} 
+            initial={{opacity:0}}>
+          {showBasicos && <MotionPasos arrPasos={pasosBasicos} /> }
+          {showHtmlCss && <MotionPasos arrPasos={pasosHtmlCss} /> }
+          {showReact && <MotionPasos arrPasos={pasosReact} /> }
+          {showVite && <MotionPasos arrPasos={pasosVite} /> }
+        </motion.div>
+
       </Container>
     </Box>
   )
